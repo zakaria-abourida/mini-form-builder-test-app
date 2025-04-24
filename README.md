@@ -12,5 +12,5 @@ The frontend is built with **React** and uses **Redux with Redux Thunk** for sta
 - **State Management**: Redux with Thunk  
 - **Database**: PostgreSQL  
 - **Development Server**: Vite (for React frontend)  
-- **Production Server**: Nginx (optional)  
+- **Production Server**: Nginx 
 - **Development Environment**: Docker  
