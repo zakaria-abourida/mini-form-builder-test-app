@@ -3,7 +3,7 @@
 ## 1. Introduction
 
 This project is a **Form Builder** application that allows users to create dynamic forms.  
-The frontend is built with **React** and uses **Redux with Redux Thunk** for state management.
+
 
 ## 2. Tech Stack
 
