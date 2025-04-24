@@ -1,0 +1,37 @@
+{
+    "welcome": "Welcome to React",
+    "greeting": "Hello, {{name}}!",
+    "untitled_fo": "Unbenanntes Formular",
+
+    "add_new_element": "Neues Element hinzufügen",
+    "language": "Sprache",
+    "search": "Suchen",
+    "publish_form": "Formular veröffentlichen",
+    "form_label": "Formularbezeichnung",
+    "turn_off": "Ausschalten",
+    "turn_on": "Einschalten",
+    "title": "Titel",
+    "background_color": "Hintergrundfarbe",
+    "created_at": "Erstellt am",
+    "action": "Aktion",
+    "show_form": "Formular anzeigen",
+
+    "add_new": "Neu hinzufügen",
+
+    "create_field": "Feld erstellen",
+    "label": "Bezeichnung",
+    "placeholder": "Platzhalter",
+    "required": "Erforderlich",
+    "yes": "Ja",
+    "no": "Nein",
+    "add_option_label": "Option Bezeichnung",
+    "add_option_value": "Option Wert",
+    "add": "Hinzufügen",
+    "confirm": "Bestätigen",
+    "cancel": "Abbrechen",
+    "option_list": "Optionen hinzufügen",
+    "both_label_and_value_required": "Sowohl Bezeichnung als auch Wert sind erforderlich.",
+    "placeholder_required": "Platzhalter ist für Textfelder erforderlich.",
+    "please_add_at_least_two_option": "Bitte fügen Sie mindestens zwei Optionen hinzu.",
+    "please_add_at_least_one_option": "Bitte fügen Sie mindestens eine Option hinzu."
+}
