@@ -1,11 +1,14 @@
 import '../css/app.css';
 
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { createInertiaApp } from '@inertiajs/react';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { initializeTheme } from './hooks/use-appearance';
+
+const queryClient = new QueryClient();
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
@@ -16,9 +19,11 @@ createInertiaApp({
         const root = createRoot(el);
 
         root.render(
-            <Provider store={store}>
-                <App {...props} />
-            </Provider>,
+            <QueryClientProvider client={queryClient}>
+                <Provider store={store}>
+                    <App {...props} />
+                </Provider>
+            </QueryClientProvider>,
         );
     },
     progress: {
