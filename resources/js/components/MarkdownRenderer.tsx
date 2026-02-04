@@ -91,7 +91,7 @@ export const MarkdownRenderer = forwardRef<MarkdownRendererHandle, MarkdownRende
             const formData = new FormData()
             formData.append('file', file)
 
-            const res = await fetch(`${envConfig.config.apiUrl}/mock/feed/upload/image`, {
+            const res = await fetch(`${envConfig.config.apiUrl}${envConfig.config.imageUploadEndpoint}`, {
                 method: 'POST',
                 body: formData
             })
@@ -109,6 +109,9 @@ export const MarkdownRenderer = forwardRef<MarkdownRendererHandle, MarkdownRende
             const uuid = data.blob_handle.replace(/^blob:\/\//, '')
 
             return `${envConfig.config.apiUrl}/files/${uuid}`
+        },
+        onError: (error: Error) => {
+            console.error('Image upload error:', error)
         }
     })
 
@@ -140,19 +143,35 @@ export const MarkdownRenderer = forwardRef<MarkdownRendererHandle, MarkdownRende
             const url = await imageMutation.mutateAsync(resizedFile)
             callback(url, blob.name)
         } catch (err) {
-            alert('Failed to upload image: ' + (err as Error).message)
+            console.error('Image upload failed:', err)
+            // Optionally notify the user through a better UI mechanism
+            // For now, using alert as a simple fallback
+            if (typeof window !== 'undefined') {
+                alert('Failed to upload image: ' + (err as Error).message)
+            }
         }
     }
 
     if (readOnly) {
+        let htmlContent = value || noValueMarker || 'No value'
+        
+        // Only get HTML from editor if it's available and initialized
+        if (editorRef.current) {
+            try {
+                const instance = editorRef.current.getInstance()
+                if (instance) {
+                    htmlContent = instance.getHTML()
+                }
+            } catch (error) {
+                // Editor not yet initialized, use value as fallback
+                console.warn('Editor instance not ready:', error)
+            }
+        }
+        
         return (
             <div
                 className='prose max-w-full dark:prose-invert'
-                dangerouslySetInnerHTML={{
-                    __html: editorRef.current
-                        ? editorRef.current.getInstance().getHTML()
-                        : value || noValueMarker || 'No value'
-                }}
+                dangerouslySetInnerHTML={{ __html: htmlContent }}
             />
         )
     }

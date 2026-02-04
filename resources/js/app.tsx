@@ -8,7 +8,17 @@ import { Provider } from 'react-redux';
 import { store } from './app/store';
 import { initializeTheme } from './hooks/use-appearance';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+    defaultOptions: {
+        queries: {
+            staleTime: 60 * 1000, // 1 minute
+            retry: 1,
+        },
+        mutations: {
+            retry: 1,
+        },
+    },
+});
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
