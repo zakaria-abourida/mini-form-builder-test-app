@@ -157,3 +157,73 @@
         @apply bg-background text-foreground;
     }
 }
+
+/* TipTap Editor Styles */
+.float-left {
+    float: left;
+    margin-right: 1em;
+    margin-bottom: .5em;
+    max-width: 150px;
+}
+
+.max-w-xs {
+    max-width: 150px;
+}
+
+.best-tiptap-toolbar-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.45em 0.7em;
+    font-size: 1.1rem;
+    transition: background 0.1s;
+}
+
+.best-tiptap-toolbar-btn.active {
+    background: #dbeafe;
+    font-weight: bold;
+    border-radius: 4px;
+}
+
+.tiptap {
+    min-height: 340px;
+    height: 420px;
+    font-size: 1.17rem;
+    padding: 1px;
+    background: #fff;
+    border-radius: 8px;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 780px;
+    overflow-y: auto;
+    outline: none !important;
+}
+
+.tiptap ol {
+    list-style-type: decimal;
+    margin-left: 2em;
+    padding-left: 0.5em;
+}
+
+.tiptap ul {
+    list-style-type: disc;
+    margin-left: 2em;
+    padding-left: 0.5em;
+}
+
+.tiptap table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
+}
+
+.tiptap th, .tiptap td {
+    border: 1.5px solid #b7c3d8;
+    padding: 0.45em 0.7em;
+}
+
+.tiptap th {
+    background: #e6efff;
+    font-weight: bold;
+    text-align: left;
+}
