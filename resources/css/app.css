@@ -197,7 +197,6 @@
     max-width: 780px;
     overflow-y: auto;
     outline: none !important;
-    transition: border-color 0.18s;
 }
 
 .tiptap ol {
